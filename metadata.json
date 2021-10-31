@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "defaultFile": "contracts/Event.sol",
+  "environment": "solidity",
+  "setupCommands": ["npm i", "npx hardhat compile"],
+  "compileCommand": "npx hardhat compile",
+  "tests": [
+    { "itShould": "Compile", "command": "sh learn_tests/58.sh" },
+    { "itShould": "Call testLog", "command": "sh learn_tests/59.sh" }
+  ],
+  "learnerAccessibleFileList": ["contracts/*"]
+}
