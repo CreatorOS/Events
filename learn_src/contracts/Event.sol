@@ -9,7 +9,8 @@ contract Event {
     event AnotherLog();
 
     function test() public {
-        emit Log(msg.sender, "Hello World!");
+        // write logic to emit the Log event with the parameters of sender address and "Hello World" message 
+        
         emit AnotherLog();
     }
 }
