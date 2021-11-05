@@ -22,9 +22,9 @@ async function main() {
   await contract.deployed();
   console.log('Event Contract deployed to:', contract.address);
 
-  contract.on('Log', (address, msg)=> {
+  contract.on('Log', (address, msg) => {
     console.log(address, msg);
-    if(address === deployer.address && msg === 'Hello World!') {
+    if (address === deployer.address && msg === 'Hello World!') {
       console.log('test passed');
       process.exit(0);
     } else {
@@ -38,7 +38,7 @@ async function main() {
     await contract.test();
   } catch (e) {
     console.error(e);
-    if(e.message.includes('Not owner')) {
+    if (e.message.includes('Not owner')) {
       console.log('test passed');
       process.exit(0);
     } else {
@@ -51,10 +51,11 @@ async function main() {
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
-.then(() => {
-  setTimeout(()=>{ 
-process.exit(0);
-  }, 10000);
+  .then(() => {
+    setTimeout(() => {
+      console.log('test failed');
+      process.exit(1);
+    }, 6000);
   })
   .catch((error) => {
     console.error(error);
